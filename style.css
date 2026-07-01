@@ -1,0 +1,83 @@
+/* 공통 리셋 및 기본 설정 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F2F4F6; /* 부드러운 그레이 배경 */
+    color: #191F28;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 📱 모바일 퍼스트 앱 컨테이너 */
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    min-height: 100vh;
+    padding-bottom: 80px; /* 푸터나 FAB 공간 확보 */
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* 고정 상단 헤더 */
+.app-header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid #F2F4F6;
+}
+
+/* 홈 화면 카테고리 카드 커스텀 */
+.category-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: none !important;
+    background-color: #F9FAFB !important;
+}
+
+.category-card:active {
+    transform: scale(0.95);
+    background-color: #EAECEF !important;
+}
+
+/* ➕ 우측 하단 글쓰기 플로팅 버튼 (FAB) */
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background-color: #3182F6; /* 토스 블루 스타일 */
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 8px 24px rgba(49, 130, 246, 0.35);
+    cursor: pointer;
+    z-index: 999;
+    transition: background-color 0.2s;
+}
+
+.fab:active {
+    background-color: #1B64D1;
+}
+
+/* PC 브라우저로 볼 때 FAB 버튼 위치 고정 */
+@media (min-width: 480px) {
+    .fab {
+        right: calc(50% - 210px);
+    }
+}
